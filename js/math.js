@@ -9,7 +9,7 @@ window.math = window.math || {};
 
     var hovering = function()
     {
-        window.document.getElementById('highlight').style.background = "blue"
+        window.document.getElementById('highlight').style.background = "blue";
         console.log("Hovering");
     };
 

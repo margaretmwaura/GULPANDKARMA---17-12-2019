@@ -1,12 +1,12 @@
 
 describe("append", function() {
     beforeEach(function() {
-        var fixture = `<div id="fixture"><p>This is my button , try clicking it</p> <p id="result">This is the results of the calculation</p>
+        var dom = `<div id="dom"><p>This is my button , try clicking it</p> <p id="result">This is the results of the calculation</p>
 <button id="button">Click me</button><p id="highlight">Testing Hughlightinh</p></div>`;
 
         document.body.insertAdjacentHTML(
             'afterbegin',
-            fixture);
+            dom);
     });
 
     beforeEach(function() {
@@ -26,8 +26,9 @@ describe("append", function() {
 
     });
     it("should change background color", function() {
-        window.document.getElementById('highlight').onmouseover;
-        var color = window.document.getElementById('highlight').style.backgroundColor
+        window.document.getElementById('highlight').dispatchEvent(new Event('mouseover'));
+        var color = window.document.getElementById('highlight').style.backgroundColor;
+        console.log(color);
         expect(color).toBe("blue");
 
     });
